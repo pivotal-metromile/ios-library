@@ -85,12 +85,18 @@
 
 - (void)setPurpose:(NSString *)purpose {
     if (purpose) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         self.locationManager.purpose = purpose;
+#pragma clang diagnostic pop
     }
 }
 
 - (NSString *)purpose {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     return self.locationManager.purpose;
+#pragma clang diagnostic pop
 }
 
 - (CLLocationDistance)distanceFilter {
